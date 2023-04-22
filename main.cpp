@@ -15,6 +15,8 @@ int main() {
         std::cout << "4. Linked list based queue\n";
         std::cout << "5. Array based deque\n";
         std::cout << "6. Linked list based deque\n";
+        std::cout << "7. Stack using queues\n";
+        std::cout << "8. Queue using stacks\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -36,6 +38,12 @@ int main() {
                 break;
             case 6:
                 linkedListDeque();
+                break;
+            case 7:
+                stack_of_queue();
+                break;
+            case 8:
+                queue_of_stack();
                 break;
             case 0:
                 break;

@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "../custom/stack.hpp"
+#include "../custom/queue.hpp"
 #include "stack.hpp"
 
 using namespace custom;
@@ -144,4 +145,62 @@ void linkedListStack() {
                 break;
         }
     } while (in != 0);
+}
+
+void stack_of_queue_menu() {
+    cout << "\tStack of Queue\t\n";
+    cout << "1. Push\n";
+    cout << "2. Pop\n";
+    cout << "3. Print\n";
+    cout << "0. Exit\n";
+    cout << "  select: ";
+}
+
+void stack_of_queue() {
+    linked_list_queue<int> queue1;
+    linked_list_queue<int> queue2;
+
+    int input = 0;
+    int c;
+
+    do {
+        stack_of_queue_menu();
+        cin >> input;
+
+        switch (input) {
+            case 1:
+                cout << "Enter an integer: ";
+                cin >> c;
+                if (queue1.empty()) {
+                    queue1.enqueue(c);
+                    while (!queue2.empty()) {
+                        queue1.enqueue(queue2.dequeue());
+                    }
+                } else {
+                    queue2.enqueue(c);
+                    while (!queue1.empty()) {
+                        queue2.enqueue(queue1.dequeue());
+                    }
+                }
+                break;
+            case 2:
+                if (queue1.empty() && queue2.empty()) {
+                    cout << "Queue is empty.\n";
+                } else {
+                    if (!queue1.empty()) {
+                        cout << "Dequeued value is " << queue1.dequeue() << endl;
+                    } else {
+                        cout << "Dequeued value is " << queue2.dequeue() << endl;
+                    }
+                }
+                break;
+            case 3:
+                if (!queue1.empty()) {
+                    queue1.print();
+                } else {
+                    queue2.print();
+                }
+                break;
+        }
+    } while (input != 0);
 }

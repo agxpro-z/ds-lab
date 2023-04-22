@@ -2,6 +2,7 @@
 #include <string>
 
 #include "../custom/queue.hpp"
+#include "../custom/stack.hpp"
 #include "queue.hpp"
 
 using namespace custom;
@@ -127,6 +128,59 @@ void linkedListQueue() {
                 break;
             case 5:
                 queue.print();
+                break;
+        }
+    } while (input != 0);
+}
+
+void queue_of_stack_menu() {
+    cout << "\nQueue based on stack\t\n";
+    cout << "1. Enqueue\t\t";
+    cout << "2. Dequeue\n";
+    cout << "3. Print\t\t";
+    cout << "0. Exit\n";
+    cout << "  select: ";
+}
+
+void queue_of_stack() {
+    linked_list_stack<int> stack;
+    linked_list_stack<int> aux_stack;;
+
+    int input = 0;
+    int c;
+
+    do {
+        queue_of_stack_menu();
+        cin >> input;
+
+        switch (input) {
+            case 1:
+                cout << "Enter an integer: ";
+                cin >> c;
+                if (stack.empty()) {
+                    stack.push(c);
+                } else {
+                    while (!stack.empty()) {
+                        aux_stack.push(stack.top());
+                        stack.pop();
+                    }
+                    stack.push(c);
+                    while (!aux_stack.empty()) {
+                        stack.push(aux_stack.top());
+                        aux_stack.pop();
+                    }
+                }
+                break;
+            case 2:
+                if (stack.empty()) {
+                    std::cout << "Queue is empty\n";
+                    break;
+                }
+                std::cout << "Dequed value = " << stack.top() << std::endl;
+                stack.pop();
+                break;
+            case 3:
+                stack.print();
                 break;
         }
     } while (input != 0);

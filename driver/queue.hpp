@@ -3,5 +3,6 @@
 
 void arrayQueue();
 void linkedListQueue();
+void queue_of_stack();
 
 #endif // QUEUE_HPP_DRIVER

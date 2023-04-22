@@ -160,12 +160,12 @@ class linked_list_queue {
             node<T>* tmp = head;
             head = tail = nullptr;
             this->m_size--;
-            T t = tmp->val;
+            T t = tmp->data;
             delete tmp;
             return t;
         }
 
-        T t = head->val;
+        T t = head->data;
         node<T>* h = head;
         head = head->next;
         this->m_size--;
