@@ -1,0 +1,5 @@
+# Ignore temporary build files
+*.o
+
+# Ignore output binary
+main

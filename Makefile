@@ -10,27 +10,33 @@ CC_FLAGS = -pedantic-errors
 # OS specific variables
 ifeq ($(OS), Windows_NT)
 	BIN = main.exe
-	CLEAN = del /q *.o
+	CLEAN = del /q
 	EMPTY_LINE = echo.
 else
 	BIN = main
-	CLEAN = rm -f *.o
+	CLEAN = rm -f
 	EMPTY_LINE = echo
 endif
 
 # Make program
-main: main.o
+main: main.o driver.d
 	@$(EMPTY_LINE)
 	@echo Linking...
-	@$(CC) $(CC_VERSION) $(CC_FLAGS) -o $(BIN) $?
-	@echo "$? -> $(BIN)"
+	@$(CC) $(CC_VERSION) $(CC_FLAGS) -o $(BIN) main.o driver/*.o
+	@echo "Output: $(BIN)"
 
 main.o: main.cpp
-	@echo Building...
+	@echo Compiling...
 	@echo "main.cpp -> main.o"
 	@$(CC) $(CC_VERSION) $(CC_FLAGS) -c $?
+	@echo
+
+driver.d:
+	@echo Compiling...
+	@echo "driver/stack.cpp -> driver/stack.o"
+	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c stack.cpp
 
 # Clean build dir
 clean:
 	@echo Cleaing...
-	@$(CLEAN) $(BIN)
+	@$(CLEAN) $(BIN) *.o driver/*.o
