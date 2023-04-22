@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "driver/queue.hpp"
 #include "driver/stack.hpp"
 
 int main() {
@@ -8,8 +9,10 @@ int main() {
     int in{};
 
     do {
-        std::cout << "1. Array based stack.\n";
-        std::cout << "2. Linked list based stack.\n";
+        std::cout << "1. Array based stack\n";
+        std::cout << "2. Linked list based stack\n";
+        std::cout << "3. Array based queue\n";
+        std::cout << "4. Linked list based queue\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -19,6 +22,12 @@ int main() {
                 break;
             case 2:
                 linkedListStack();
+                break;
+            case 3:
+                arrayQueue();
+                break;
+            case 4:
+                linkedListQueue();
                 break;
             case 0:
                 break;

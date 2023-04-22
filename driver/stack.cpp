@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "../custom/stack.hpp"
+#include "stack.hpp"
 
 using namespace custom;
 using namespace std;

@@ -35,6 +35,8 @@ driver.d:
 	@echo Compiling...
 	@echo "driver/stack.cpp -> driver/stack.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c stack.cpp
+	@echo "driver/queue.cpp -> driver/qeueu.o"
+	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c queue.cpp
 
 # Clean build dir
 clean:
