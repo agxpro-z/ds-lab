@@ -7,7 +7,7 @@
 using namespace custom;
 using namespace std;
 
-void menu() {
+void array_queue_menu() {
     cout << "\nArray based Queue\t\n";
     cout << "1. Enqueue\t\t";
     cout << "2. Dequeue\n";
@@ -28,7 +28,7 @@ void arrayQueue() {
     int c;
 
     do {
-        menu();
+        array_queue_menu();
         cin >> input;
 
         switch (input) {
@@ -71,7 +71,7 @@ void arrayQueue() {
     } while (input != 0);
 }
 
-void llmenu() {
+void linked_list_queue_menu() {
     cout << "\nArray based Queue\t\n";
     cout << "1. Enqueue\t\t";
     cout << "2. Dequeue\n";
@@ -89,7 +89,7 @@ void linkedListQueue() {
     int c;
 
     do {
-        llmenu();
+        linked_list_queue_menu();
         cin >> input;
 
         switch (input) {

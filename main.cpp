@@ -1,18 +1,20 @@
 #include <iostream>
 
+#include "driver/deque.hpp"
 #include "driver/queue.hpp"
 #include "driver/stack.hpp"
 
 int main() {
-    std::cout << "DS Lab Programs\n";
-
     int in{};
 
     do {
+        std::cout << "\nDS Lab Programs\n";
         std::cout << "1. Array based stack\n";
         std::cout << "2. Linked list based stack\n";
         std::cout << "3. Array based queue\n";
         std::cout << "4. Linked list based queue\n";
+        std::cout << "5. Array based deque\n";
+        std::cout << "6. Linked list based deque\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -28,6 +30,12 @@ int main() {
                 break;
             case 4:
                 linkedListQueue();
+                break;
+            case 5:
+                arrayDeque();
+                break;
+            case 6:
+                linkedListDeque();
                 break;
             case 0:
                 break;

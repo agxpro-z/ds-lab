@@ -14,16 +14,20 @@ class array_queue {
     int m_size, m_capacity;
     int frontIndex;
     int rearIndex;
-
     T* m_data;
 
   public:
-    array_queue() : m_size(0), m_capacity(10), frontIndex(0), rearIndex(0), m_data(NULL) {
+    array_queue() : m_size(0), m_capacity(10), frontIndex(0), rearIndex(0), m_data(nullptr) {
         m_data = new T[m_capacity];
     }
 
-    array_queue(int cap) : m_size(0), m_capacity(cap), frontIndex(0), rearIndex(0), m_data(NULL) {
+    array_queue(int cap) : m_size(0), m_capacity(cap), frontIndex(0), rearIndex(0), m_data(nullptr) {
         m_data = new T[m_capacity];
+    }
+
+    ~array_queue() {
+        if (m_data != nullptr)
+            delete[] m_data;
     }
 
     int size() {
