@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "driver/deque.hpp"
+#include "driver/infix_postfix.hpp"
 #include "driver/queue.hpp"
 #include "driver/stack.hpp"
 
@@ -9,14 +10,19 @@ int main() {
 
     do {
         std::cout << "\nDS Lab Programs\n";
-        std::cout << "1. Array based stack\n";
-        std::cout << "2. Linked list based stack\n";
-        std::cout << "3. Array based queue\n";
-        std::cout << "4. Linked list based queue\n";
-        std::cout << "5. Array based deque\n";
-        std::cout << "6. Linked list based deque\n";
-        std::cout << "7. Stack using queues\n";
-        std::cout << "8. Queue using stacks\n";
+        std::cout << " 1. Array based stack\n";
+        std::cout << " 2. Linked list based stack\n";
+        std::cout << " 3. Array based queue\n";
+        std::cout << " 4. Linked list based queue\n";
+        std::cout << " 5. Array based deque\n";
+        std::cout << " 6. Linked list based deque\n";
+        std::cout << " 7. Stack using queues\n";
+        std::cout << " 8. Queue using stacks\n";
+        std::cout << std::endl;
+        std::cout << " 9. Infix to postfix\n";
+        std::cout << "10. Infix to prefix\n";
+        std::cout << "11. Evaluate Postfix expression\n";
+        std::cout << "12. Evaluate Prefix expression\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -44,6 +50,18 @@ int main() {
                 break;
             case 8:
                 queue_of_stack();
+                break;
+            case 9:
+                infix_to_postfix_driver();
+                break;
+            case 10:
+                infix_to_prefix_driver();
+                break;
+            case 11:
+                postfix_evaluation_driver();
+                break;
+            case 12:
+                prefix_evaluation_driver();
                 break;
             case 0:
                 break;
