@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "driver/deque.hpp"
+#include "driver/heap.hpp"
 #include "driver/infix_postfix.hpp"
 #include "driver/linked_list.hpp"
 #include "driver/queue.hpp"
@@ -40,6 +41,9 @@ int main() {
         std::cout << std::endl;
         std::cout << "22. Binary Search Tree\n";
         std::cout << "23. AVL Tree\n";
+        std::cout << std::endl;
+        std::cout << "24. Max Heap\n";
+        std::cout << "25. Min Heap\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -112,6 +116,12 @@ int main() {
                 break;
             case 23:
                 avl_driver();
+                break;
+            case 24:
+                max_heap_driver();
+                break;
+            case 25:
+                min_heap_driver();
                 break;
             case 0:
                 break;
