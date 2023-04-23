@@ -6,6 +6,7 @@
 #include "driver/queue.hpp"
 #include "driver/sort.hpp"
 #include "driver/stack.hpp"
+#include "driver/tree.hpp"
 
 int main() {
     int in{};
@@ -36,6 +37,9 @@ int main() {
         std::cout << "19. Quick sort\n";
         std::cout << "20. Count sort\n";
         std::cout << "21. Radix sort\n";
+        std::cout << std::endl;
+        std::cout << "22. Binary Search Tree\n";
+        std::cout << "23. AVL Tree\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -102,6 +106,12 @@ int main() {
                 break;
             case 21:
                 radix_sort_driver();
+                break;
+            case 22:
+                bst_driver();
+                break;
+            case 23:
+                avl_driver();
                 break;
             case 0:
                 break;

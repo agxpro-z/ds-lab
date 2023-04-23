@@ -6,14 +6,16 @@ namespace custom {
 template<typename T>
 class node {
   public:
+    node<T>* left;
     node<T>* prev;
     T data;
     node<T>* next;
+    node<T>* right;
 
     // Constructors
-    node(T val) : prev(nullptr), data(val), next(nullptr) {}
-    node(T val, node<T>* next) : prev(nullptr), data(val), next(next) {}
-    node(node<T>* prev, T val, node<T>* next) : prev(prev), data(val), next(next) {}
+    node(T val) : left(nullptr), prev(nullptr), data(val), next(nullptr), right(nullptr) {}
+    node(T val, node<T>* next) : left(nullptr), prev(nullptr), data(val), next(next), right(next) {}
+    node(node<T>* prev, T val, node<T>* next) : left(prev), prev(prev), data(val), next(next), right(next) {}
 };
 
 } // namespace custom

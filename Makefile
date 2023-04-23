@@ -45,6 +45,8 @@ driver.d:
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c sort.cpp
 	@echo "driver/stack.cpp -> driver/stack.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c stack.cpp
+	@echo "driver/tree.cpp -> driver/tree.o"
+	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c tree.cpp
 
 # Clean build dir
 clean:
