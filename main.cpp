@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "driver/deque.hpp"
+#include "driver/hash.hpp"
 #include "driver/heap.hpp"
 #include "driver/infix_postfix.hpp"
 #include "driver/linked_list.hpp"
@@ -44,6 +45,9 @@ int main() {
         std::cout << std::endl;
         std::cout << "24. Max Heap\n";
         std::cout << "25. Min Heap\n";
+        std::cout << std::endl;
+        std::cout << "26. Hashing Linear Probing\n";
+        std::cout << "27. Hashing Separate Chaining\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -122,6 +126,12 @@ int main() {
                 break;
             case 25:
                 min_heap_driver();
+                break;
+            case 26:
+                linear_probing_driver();
+                break;
+            case 27:
+                separate_chaining_driver();
                 break;
             case 0:
                 break;

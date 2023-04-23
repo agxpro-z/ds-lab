@@ -35,6 +35,8 @@ driver.d:
 	@echo Compiling...
 	@echo "driver/deque.cpp -> driver/deque.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c deque.cpp
+	@echo "driver/hash.cpp -> driver/hash.o"
+	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c hash.cpp
 	@echo "driver/heap.cpp -> driver/heap.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c heap.cpp
 	@echo "driver/infix_posfix.cpp -> driver/infix_posfix.o"
