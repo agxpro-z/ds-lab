@@ -41,6 +41,8 @@ driver.d:
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c linked_list.cpp
 	@echo "driver/queue.cpp -> driver/qeueu.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c queue.cpp
+	@echo "driver/sort.cpp -> driver/sort.o"
+	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c sort.cpp
 	@echo "driver/stack.cpp -> driver/stack.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c stack.cpp
 

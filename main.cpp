@@ -4,6 +4,7 @@
 #include "driver/infix_postfix.hpp"
 #include "driver/linked_list.hpp"
 #include "driver/queue.hpp"
+#include "driver/sort.hpp"
 #include "driver/stack.hpp"
 
 int main() {
@@ -29,6 +30,12 @@ int main() {
         std::cout << "14. Doubly linked list\n";
         std::cout << "15. Circular singly linked list\n";
         std::cout << "16. Circular doubly linked list\n";
+        std::cout << std::endl;
+        std::cout << "17. Insertion sort\n";
+        std::cout << "18. Merge sort\n";
+        std::cout << "19. Quick sort\n";
+        std::cout << "20. Count sort\n";
+        std::cout << "21. Radix sort\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -80,6 +87,21 @@ int main() {
                 break;
             case 16:
                 circular_doubly_linked_list_driver();
+                break;
+            case 17:
+                insertion_sort_driver();
+                break;
+            case 18:
+                merge_sort_driver();
+                break;
+            case 19:
+                quick_sort_driver();
+                break;
+            case 20:
+                count_sort_driver();
+                break;
+            case 21:
+                radix_sort_driver();
                 break;
             case 0:
                 break;
