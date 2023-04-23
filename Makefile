@@ -37,6 +37,8 @@ driver.d:
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c deque.cpp
 	@echo "driver/infix_posfix.cpp -> driver/infix_posfix.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c infix_postfix.cpp
+	@echo "driver/linked_list.cpp -> driver/linked_list.o"
+	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c linked_list.cpp
 	@echo "driver/queue.cpp -> driver/qeueu.o"
 	@cd driver && $(CC) $(CC_VERSION) $(CC_FLAGS) -c queue.cpp
 	@echo "driver/stack.cpp -> driver/stack.o"

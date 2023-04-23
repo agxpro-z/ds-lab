@@ -2,6 +2,7 @@
 
 #include "driver/deque.hpp"
 #include "driver/infix_postfix.hpp"
+#include "driver/linked_list.hpp"
 #include "driver/queue.hpp"
 #include "driver/stack.hpp"
 
@@ -23,6 +24,11 @@ int main() {
         std::cout << "10. Infix to prefix\n";
         std::cout << "11. Evaluate Postfix expression\n";
         std::cout << "12. Evaluate Prefix expression\n";
+        std::cout << std::endl;
+        std::cout << "13. Singly linked list\n";
+        std::cout << "14. Doubly linked list\n";
+        std::cout << "15. Circular singly linked list\n";
+        std::cout << "16. Circular doubly linked list\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -62,6 +68,18 @@ int main() {
                 break;
             case 12:
                 prefix_evaluation_driver();
+                break;
+            case 13:
+                singly_linked_list_driver();
+                break;
+            case 14:
+                doubly_linked_list_driver();
+                break;
+            case 15:
+                circular_singly_linked_list_driver();
+                break;
+            case 16:
+                circular_doubly_linked_list_driver();
                 break;
             case 0:
                 break;
