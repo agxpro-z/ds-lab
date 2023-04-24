@@ -13,6 +13,7 @@ class Heap {
     int capacity;
     int size;
 
+    // Compare elements based on heap type
     bool compare(const T& a, const T& b) {
         if (isMinHeap) {
             return a < b;
@@ -21,9 +22,10 @@ class Heap {
         }
     }
 
+    // Heapify
     void heapify(int index) {
-        int left = 2 * index + 1;
-        int right = 2 * index + 2;
+        int left = 2 * index + 1; // left child
+        int right = 2 * index + 2; // right child
         int smallestOrLargest = index;
 
         if (left < size && compare(heap[left], heap[smallestOrLargest])) {
@@ -43,6 +45,7 @@ class Heap {
     }
 
   public:
+    // Constructor
     Heap(int capacity, bool isMinHeap) {
         this->heap = new T[capacity];
         this->isMinHeap = isMinHeap;
@@ -50,6 +53,7 @@ class Heap {
         this->size = 0;
     }
 
+    // Destructor
     ~Heap() {
         delete[] heap;
     }
@@ -82,6 +86,7 @@ class Heap {
         }
     }
 
+    // Show the top element
     T peek() const {
         if (isEmpty()) {
             std::cout << "Heap is empty, cannot peek." << std::endl;
@@ -91,6 +96,7 @@ class Heap {
         return heap[0];
     }
 
+    // Remove the top element
     T remove() {
         if (isEmpty()) {
             std::cout << "Heap is empty, cannot extract." << std::endl;
@@ -105,6 +111,7 @@ class Heap {
         return value;
     }
 
+    // Show the heap
     void print() const {
         if (isEmpty()) {
             std::cout << "Heap is empty." << std::endl;
@@ -116,6 +123,53 @@ class Heap {
         }
 
         std::cout << std::endl;
+    }
+};
+
+template <typename T>
+class HeapSort {
+  public:
+    // constructor
+    HeapSort() {}
+
+    // function to heapify a subtree rooted with node i which is an index in arr[]
+    void heapify(T arr[], int n, int i) {
+        int largest = i;  // initialize largest as root
+        int left = 2 * i + 1;  // left child = 2*i + 1
+        int right = 2 * i + 2;  // right child = 2*i + 2
+
+        // if left child is larger than root
+        if (left < n && arr[left] > arr[largest])
+            largest = left;
+
+        // if right child is larger than largest so far
+        if (right < n && arr[right] > arr[largest])
+            largest = right;
+
+        // if largest is not root
+        if (largest != i) {
+            std::swap(arr[i], arr[largest]);
+
+            // recursively heapify the affected sub-tree
+            heapify(arr, n, largest);
+        }
+    }
+
+    // main function to do heap sort
+    void heapSort(T arr[], int n) {
+        // build heap (rearrange array)
+        for (int i = n / 2 - 1; i >= 0; --i) {
+            heapify(arr, n, i);
+        }
+
+        // one by one extract an element from heap
+        for (int i = n - 1; i >= 0; --i) {
+            // move current root to end
+            std::swap(arr[0], arr[i]);
+
+            // call max heapify on the reduced heap
+            heapify(arr, i, 0);
+        }
     }
 };
 

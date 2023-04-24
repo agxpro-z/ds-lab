@@ -46,12 +46,13 @@ int main() {
         std::cout << std::endl;
         std::cout << "24. Max Heap\n";
         std::cout << "25. Min Heap\n";
+        std::cout << "26. Heap Sort\n";
         std::cout << std::endl;
-        std::cout << "26. Hashing Linear Probing\n";
-        std::cout << "27. Hashing Separate Chaining\n";
+        std::cout << "27. Hashing Linear Probing\n";
+        std::cout << "28. Hashing Separate Chaining\n";
         std::cout << std::endl;
-        std::cout << "28. Breadth First Search\n";
-        std::cout << "29. Depth First Search\n";
+        std::cout << "29. Breadth First Search\n";
+        std::cout << "30. Depth First Search\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -132,15 +133,18 @@ int main() {
                 min_heap_driver();
                 break;
             case 26:
-                linear_probing_driver();
+                heap_sort_driver();
                 break;
             case 27:
-                separate_chaining_driver();
+                linear_probing_driver();
                 break;
             case 28:
-                bfs_driver();
+                separate_chaining_driver();
                 break;
             case 29:
+                bfs_driver();
+                break;
+            case 30:
                 dfs_driver();
                 break;
             case 0:

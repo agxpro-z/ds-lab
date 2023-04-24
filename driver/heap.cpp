@@ -88,3 +88,28 @@ void min_heap_driver() {
         }
     } while (in != 0);
 }
+
+void heap_sort_driver() {
+    cout << "Heap sort\n";
+    cout << "Enter no. of elements: ";
+    int n;
+    cin >> n;
+
+    // Take input in the array
+    cout << "Enter elements: ";
+    int* elements = new int[n];
+    for (int i = 0; i < n; i++) {
+        cin >> elements[i];
+    }
+
+    HeapSort<int> heapSort;
+    heapSort.heapSort(elements, n);
+
+    // Print sorted array
+    cout << "Sorted array: ";
+    for (int i = 0; i < n; i++) {
+        cout << elements[i] << " ";
+    }
+    cout << endl;
+    delete[] elements;
+}
