@@ -29,7 +29,7 @@ main.o: main.cpp
 	@echo Compiling...
 	@echo "main.cpp -> main.o"
 	@$(CC) $(CC_VERSION) $(CC_FLAGS) -c $?
-	@echo
+	@$(EMPTY_LINE)
 
 driver.d:
 	@echo Compiling...
@@ -57,4 +57,5 @@ driver.d:
 # Clean build dir
 clean:
 	@echo Cleaing...
-	@$(CLEAN) $(BIN) *.o driver/*.o
+	@$(CLEAN) $(BIN) *.o
+	@cd driver && $(CLEAN) $(BIN) *.o
