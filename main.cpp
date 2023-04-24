@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "driver/deque.hpp"
+#include "driver/graph.hpp"
 #include "driver/hash.hpp"
 #include "driver/heap.hpp"
 #include "driver/infix_postfix.hpp"
@@ -48,6 +49,9 @@ int main() {
         std::cout << std::endl;
         std::cout << "26. Hashing Linear Probing\n";
         std::cout << "27. Hashing Separate Chaining\n";
+        std::cout << std::endl;
+        std::cout << "28. Breadth First Search\n";
+        std::cout << "29. Depth First Search\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -132,6 +136,12 @@ int main() {
                 break;
             case 27:
                 separate_chaining_driver();
+                break;
+            case 28:
+                bfs_driver();
+                break;
+            case 29:
+                dfs_driver();
                 break;
             case 0:
                 break;
