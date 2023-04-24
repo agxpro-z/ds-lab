@@ -132,13 +132,13 @@ class linked_list_queue {
     }
 
     bool enqueue(T val) {
-        if (head == nullptr && tail == nullptr) {
+        if (head == nullptr || tail == nullptr) {
             head = tail = new node<T>(val);
-            if (this->head == nullptr || this->tail == nullptr) {
+            if (head == nullptr || tail == nullptr) {
                 head = tail = nullptr;
                 return false;
             }
-            this->m_size++;
+            m_size++;
             return true;
         }
 
@@ -146,8 +146,9 @@ class linked_list_queue {
         if (h == nullptr) {
             return false;
         }
-        this->m_size++;
+        m_size++;
         tail->next = h;
+        tail = tail->next;
         return true;
     }
 

@@ -84,7 +84,7 @@ void linked_list_queue_menu() {
 }
 
 void linkedListQueue() {
-    array_queue<int> queue;
+    linked_list_queue<int> queue;
 
     int input = 0;
     int c;
@@ -97,10 +97,6 @@ void linkedListQueue() {
             case 1:
                 cout << "Enter an integer: ";
                 cin >> c;
-                if (queue.full()) {
-                    cout << "Queue is full.\n";
-                    break;
-                }
                 if (!queue.enqueue(c)) {
                     cout << "Some error occureced while enqueueing.\n";
                 }
