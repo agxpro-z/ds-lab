@@ -80,3 +80,77 @@ void dfs_driver() {
     g.DFS(1);
     cout << endl;
 }
+
+void prims_algo_driver() {
+    int graph[V][V] = {{0, 2, 0, 6, 0},
+                       {2, 0, 3, 8, 5},
+                       {0, 3, 0, 0, 7},
+                       {6, 8, 0, 0, 9},
+                       {0, 5, 7, 9, 0}};
+
+    cout << "Adjacency Matrix: \n";
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++) {
+            cout << graph[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    PrimMST prim;
+    prim.primMST(graph);
+}
+
+void dijkstra_algo_driver() {
+    const int V = 9;
+    Dijkstra d(V);
+
+    int graph[V][V] = { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
+                        { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
+                        { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
+                        { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
+                        { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
+                        { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
+                        { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
+                        { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
+                        { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
+
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++) {
+            if (graph[i][j] < 10)
+                cout << "  " << graph[i][j];
+            else
+                cout << " " << graph[i][j];
+
+            if (graph[i][j] != 0)
+                d.addEdge(i, j, graph[i][j]);
+        }
+        cout << endl;
+    }
+
+    int src = 0;
+    cout << "Source: " << src << endl;
+    d.dijkstra(src);
+}
+
+void floyd_algo_driver() {
+    int graph[V][V] = {{0, 2, 0, 6, 0},
+                       {2, 0, 3, 8, 5},
+                       {0, 3, 0, 0, 7},
+                       {6, 8, 0, 0, 9},
+                       {0, 5, 7, 9, 0}};
+
+    Floyd f;
+
+    cout << "Adjacency Matrix: \n";
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++) {
+            cout << graph[i][j] << " ";
+
+            if (graph[i][j] != 0)
+                f.addEdge(i, j, graph[i][j]);
+        }
+        cout << endl;
+    }
+
+    f.floydWarshall(); // find all pair of shortest paths
+}

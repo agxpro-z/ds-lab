@@ -53,6 +53,9 @@ int main() {
         std::cout << std::endl;
         std::cout << "29. Breadth First Search\n";
         std::cout << "30. Depth First Search\n";
+        std::cout << "31. Prim's algorithm for MST\n";
+        std::cout << "32. Dijkstra algorithm for shortest path\n";
+        std::cout << "33. Floyd Warshall algorithm for shortest path\n";
         std::cout << "Select:> ";
         std::cin >> in;
 
@@ -146,6 +149,15 @@ int main() {
                 break;
             case 30:
                 dfs_driver();
+                break;
+            case 31:
+                prims_algo_driver();
+                break;
+            case 32:
+                dijkstra_algo_driver();
+                break;
+            case 33:
+                floyd_algo_driver();
                 break;
             case 0:
                 break;
